@@ -12,10 +12,7 @@ class BookReviews extends Model
 
     public $table = "bookreviews";
 
-    protected $fillable = [
-    ];
-
     public function book(){
-        return $this->belongsTo(Book::class, 'id');
+        return $this->belongsTo(Book::class);
     }
 }

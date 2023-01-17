@@ -9,6 +9,8 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'judul',
         'penulis',
@@ -16,6 +18,6 @@ class Book extends Model
     ];
 
     public function reviews(){
-        return $this->hasMany(BookReviews::class);
+        return $this->hasMany(BookReviews::class, 'review_id');
     }
 }
